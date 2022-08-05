@@ -12,5 +12,6 @@ pipeline {
                 def mvnHome = tool name: 'Apache Maven 3.8.6', type: 'maven'
                 sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
             }
+        }
     }
 }
