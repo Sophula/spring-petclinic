@@ -2,14 +2,15 @@ pipeline {
     agent any
     stages {
         stage('Checkout Source') {
-            steps {
+            steps 
                 checkout scm
             }
         } 
         stage('Build Application') { 
             steps {
                 echo '=== Building Petclinic Application ==='
-                sh 'mvn clean package' 
+                def mvnHome = tool name: 'Apache Maven 3.8.6', type: 'maven'
+                sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
             }
         }
     }
