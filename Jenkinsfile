@@ -1,5 +1,5 @@
 pipeline {
-    agent     
+    agent any
         stage('Checkout Source') {
             steps {
                 git 'https://github.com/Sophula/spring-petclinic.git'
