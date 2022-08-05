@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout Source') {
             steps {
-                git 'https://github.com/Sophula/spring-petclinic.git'
+                url 'https://github.com/Sophula/spring-petclinic.git'
             }
         } 
         stage('Build Application') { 
