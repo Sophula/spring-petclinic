@@ -9,8 +9,8 @@ pipeline {
         stage('Build Application') { 
             steps {
                 echo '=== Building Petclinic Application ==='
-                withMaven(maven: 'mvn') {
-                sh 'mvn -B -DskipTests clean package'
+                withMaven(maven: 'maven_3_8_6') {
+                    sh 'mvn -B -DskipTests clean package'
                 }
             }
         }
