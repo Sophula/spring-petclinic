@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    stages {
         stage('Checkout Source') {
             steps {
                 git 'https://github.com/Sophula/spring-petclinic.git'
@@ -11,4 +12,5 @@ pipeline {
                 sh 'mvn clean package' 
             }
         }
+    }
 }
