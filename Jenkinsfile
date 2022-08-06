@@ -12,7 +12,7 @@ pipeline {
         stage('Build Application') {
             steps {
                 echo '=== Building Petclinic Application ==='
-                sh 'mvn clean package'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test Application') {
