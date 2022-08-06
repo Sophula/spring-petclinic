@@ -20,11 +20,6 @@ pipeline {
                 echo '=== Testing Petclinic Application ==='
                 sh 'mvn test'
             }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
         }
     }
 }
