@@ -1,8 +1,6 @@
 pipeline {
     agent {
-    kubernetes {
-      yamlFile 'builder.yaml'
-    }
+    kubernetes {}
     }
     tools {
       maven 'M3'
