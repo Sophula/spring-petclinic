@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-    kubernetes {}
-    }
+    agent any
     tools {
       maven 'M3'
     }
