@@ -32,7 +32,9 @@ pipeline {
               container('kaniko') {
                 script {
                   sh '''
-                  whoami
+                  /kaniko/executor --dockerfile `pwd`/Dockerfile \
+                             --context `pwd` \
+                             --destination=df7854c892e3/web:${BUILD_NUMBER}
                   '''
                 }
              }
