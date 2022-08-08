@@ -1,7 +1,7 @@
 pipeline {
     agent {
         kubernetes {
-            label 'kaniko'
+            inheritFrom: kaniko
             yamlFile 'builder.yaml'
             idleMinutes 120
         }
