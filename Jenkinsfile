@@ -1,7 +1,7 @@
 pipeline {
     agent {
         kubernetes {
-            label 'kaniko-build-pod'
+            label 'kaniko'
             yamlFile 'builder.yaml'
             idleMinutes 120
         }
