@@ -1,7 +1,13 @@
 pipeline {
-    agent any
+    agent {
+        kubernetes {
+            label 'kaniko-build-pod'
+            yamlFile 'builder.yaml'
+            idleMinutes 120
+        }
+    }
     tools {
-      maven 'M3'
+    maven 'M3'
     }
     stages {
         stage('Checkout Source') {
