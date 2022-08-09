@@ -4,19 +4,23 @@ metadata:
   name: javaapp-deployment
   labels:
      app: javaapp
-     name: javaapp
+     type: web-app
 spec:
   template:
      metadata:
        name: javaapp-pod
        labels: 
          app: javaapp
+         type: web-app
      spec:
          containers:
            - image: "df7854c892e3/web:<TAG>"
              imagePullPolicy: Always
              name: javaapp
-
+  replicas: 1
+  selector:
+    matchLabels:
+      type: web-app
 ---
 apiVersion: v1
 kind: Service
