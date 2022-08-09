@@ -4,6 +4,12 @@ metadata:
   name: kaniko-build-pod
 spec:
   containers:
+  - name: maven
+    image: ubuntu:latest
+    command:
+    - sleep
+    args: 
+    - 9999999
   - name: kubectl
     image: joshendriks/alpine-k8s
     command:
