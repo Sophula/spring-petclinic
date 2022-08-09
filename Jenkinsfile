@@ -45,15 +45,15 @@ pipeline {
              }
             }
         }
-        /*stage('Deploy App to Kubernetes') {     
+        stage('Deploy App to Kubernetes') {     
             steps {
               container('kubectl') {
-                withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
+                withCredentials([file(credentialsId: 'kubeconfig', variable: 'kubeconfig')]) {
                   sh 'sed -i "s/<TAG>/${BUILD_NUMBER}/" web.yaml'
                   sh 'kubectl apply -f web.yaml'
                 }
               }
             }
-        }*/
+        }
     }
 }
