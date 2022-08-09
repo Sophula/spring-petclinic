@@ -30,11 +30,9 @@ pipeline {
         stage('Kaniko Build & Push Image') {
             steps {
               container('kaniko') {
-                script {
                   sh '''
                   ls /kaniko/.docker/config.json
                   '''
-                }
              }
             }
         }
