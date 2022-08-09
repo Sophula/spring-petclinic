@@ -1,3 +1,9 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: javaapp
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
