@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: spring-petclinic
-        image: df7854c892e3/web:15
+        image: df7854c892e3/web:tagname
         ports:
         - containerPort: 80
 
