@@ -21,7 +21,7 @@ pipeline {
                 sh 'mvn --version'
             }
         } 
-       /* stage('Build Application') {
+       stage('Build Application') {
             steps {
                 echo '=== Building Petclinic Application ==='
                 sh 'mvn -B -DskipTests clean package'
@@ -34,12 +34,13 @@ pipeline {
                 sh 'mvn test'
             }
          }
-         */
         stage('Kaniko Build & Push Image') {
             steps {
               container('kaniko') {
                   sh '''
-                  ls /kaniko/.docker/config.json
+                  /kaniko/executor --dockerfile `pwd`/Dockerfile \
+                             --context `pwd` \
+                             --destination=df7854c892e3/web:${BUILD_NUMBER}
                   '''
              }
             }
