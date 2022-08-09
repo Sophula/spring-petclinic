@@ -4,7 +4,7 @@ pipeline {
             label 'kaniko-build-pod'
             defaultContainer 'maven'
             yamlFile 'builder.yaml'
-            idleMinutes 120
+           # idleMinutes 120
         }
     }
     stages {
