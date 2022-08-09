@@ -7,9 +7,9 @@ pipeline {
             idleMinutes 120
         }
     }
-    tools {
+    /*tools {
     maven 'M3'
-    }
+    }*/
     stages {
         stage('Checkout Source') {
             steps {
