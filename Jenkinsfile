@@ -44,7 +44,7 @@ pipeline {
              }
             }
         }
-        stage('Deploy App to Kubernetes') {     
+        /*stage('Deploy App to Kubernetes') {     
             steps {
               container('kubectl') {
                 withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
@@ -53,6 +53,6 @@ pipeline {
                 }
               }
             }
-        }
+        }*/
     }
 }
